@@ -1,0 +1,14 @@
+
+学习demo
+=========================================================
+1.jackson 是springboot默认的json处理工具，不需要引入jar包，可以直接使用，fastjson是阿里巴巴的工具、
+
+2.jackson和fastjson区别
+fastjson更注重快速，但是jackson和其相比速度并没有差距很大，
+jackson优势，可定制性，api灵活，可以定制扩展，代码质量高，fastjson可能会出现bug（不过bug有在修改）
+https://www.zhihu.com/question/44199956  参考知乎答案
+
+3.jackson使用
+参见TestController和JsonDemoApplicationTests
+
+
