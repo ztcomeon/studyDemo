@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @create 2020-03-26
  * @since 1.0.0
  */
-@Configuration
+//@Configuration
 public class RelyConfig {
 
 

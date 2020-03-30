@@ -8,9 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.management.Query;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
@@ -89,6 +87,22 @@ public class Test1 {
         for (int i = 0; i < 7; i++) {
             Object poll = objectQueue.poll();//出队
             System.out.println(poll);
+        }
+    }
+
+    @Test
+    public void test4() throws Exception {
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", "ad");
+        map.put("b", "wew");
+        Set<Map.Entry<String, Object>> entries = map.entrySet();
+        for (Map.Entry m : entries) {
+            Object key = m.getKey();
+            System.out.println(key);
+            Object value = m.getValue();
+            System.out.println(value);
+
+
         }
     }
 

@@ -17,7 +17,7 @@ public class BeanConfig {
 
 
     //springboot装配bean的方式
-    @Bean(name = "book", initMethod = "myPostConstruct", destroyMethod = "myPreDestory")
+//    @Bean(name = "book", initMethod = "myPostConstruct", destroyMethod = "myPreDestory")
     public Book newBook() {
         Book book = new Book();//创建一个bean
 
