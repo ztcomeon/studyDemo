@@ -13,14 +13,14 @@ public class StudyDemoApplication {
         ConfigurableApplicationContext run = SpringApplication.run(StudyDemoApplication.class, args);
 //		Book book = (Book)run.getBean("book");
 //		System.out.println("Book name = " + book.getBookName());
-
-        RelyA relyA =(RelyA) run.getBean("relyA");
-        System.out.println(relyA);
-
-        RelyB relyB=(RelyB)run.getBean("relyB") ;
-        System.out.println(relyB);
-
-        run.close();
+//
+//        RelyA relyA =(RelyA) run.getBean("relyA");
+//        System.out.println(relyA);
+//
+//        RelyB relyB=(RelyB)run.getBean("relyB") ;
+//        System.out.println(relyB);
+//
+//        run.close();
     }
 
 }

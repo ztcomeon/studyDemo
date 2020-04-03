@@ -13,32 +13,32 @@ import org.springframework.context.annotation.Configuration;
  * @since 1.0.0
  */
 //@Configuration
-public class RelyConfig {
-
-
-    @Autowired
-    RelyB relyB;
-
-    @Autowired
-    RelyA relyA;
-
-    @Bean(name = "relyA")
-    public RelyA newRelyA() {
-        RelyA relyA = new RelyA(relyB);
-//        RelyA relyA = new RelyA();
-//        relyA.setRelyB(relyB);
-        return relyA;
-
-    }
-
-    @Bean(name = "relyB")
-    public RelyB newRelyB() {
-        RelyB relyB = new RelyB(relyA);
-//        RelyB relyB = new RelyB();
-//        relyB.setRelyC(relyA);
-        return relyB;
-    }
-}
+//public class RelyConfig {
+//
+//
+//    @Autowired
+//    RelyB relyB;
+//
+//    @Autowired
+//    RelyA relyA;
+//
+//    @Bean(name = "relyA")
+//    public RelyA newRelyA() {
+//        RelyA relyA = new RelyA(relyB);
+////        RelyA relyA = new RelyA();
+////        relyA.setRelyB(relyB);
+//        return relyA;
+//
+//    }
+//
+//    @Bean(name = "relyB")
+//    public RelyB newRelyB() {
+//        RelyB relyB = new RelyB(relyA);
+////        RelyB relyB = new RelyB();
+////        relyB.setRelyC(relyA);
+//        return relyB;
+//    }
+//}
 
 //循环依赖报错， 使用@Autowired后可以避免循环依赖
 //        ┌─────┐
