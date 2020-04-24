@@ -81,3 +81,9 @@ SpringMVC 中的DispatcherServlet流程
 6.解析view                DispatcherServlet-->ViewResolver-->DispatcherServlet
 7.根据Model渲染视图       DispatcherServlet-->View-->DispatcherServlet
 8.返回响应                DispatcherServlet-->用户
+
+=======================================================================
+启动时，如何运行特定的代码：
+实现CommandLineRunner或者实现AplicationRunner来实现启动时运行代码
+
+idea要实现热部署的话，需要添加jar包，然后还需要配置idea，具体可以网上搜
