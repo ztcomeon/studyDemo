@@ -25,16 +25,31 @@ BeanNameAware接口  @bean注解中name属性，设置bean的名称
 BeanFactoryAware接口，调用setBeanFactory()方法，将BeanFactory容器实例传入
 ApplicationContextAware接口 setApplicationContext()方法，将bean所在应用上下文引用传入进来
 BeanPostProcessor接口(后置处理器)，调用postProcessBeforeInitialization()方法。
-@PostConstruct 注解，
+@PostConstruct 注解，(构造函数之后，init()方法之前执行)
 InitializingBean接口，调用他们的afterPropertiesSet()方法
 initMethod指定的方法，自定义初始化方法
 BeanPostProcessor接口(后置处理器)，调用postProcessAfterInitialization()方法
-@PreDestory 注解
+@PreDestory 注解（destory方法之前执行）
 DisposableBean接口，调用destory()接口方法
 destroyMethod指定的方法，自定义的销毁方法
 
 https://www.cnblogs.com/javazhiyin/p/10905294.html  参考链接
+如上图所示，Bean 的生命周期还是比较复杂的，下面来对上图每一个步骤做文字描述:
 
+Spring启动，查找并加载需要被Spring管理的bean，进行Bean的实例化
+Bean实例化后对将Bean的引入和值注入到Bean的属性中
+如果Bean实现了BeanNameAware接口的话，Spring将Bean的Id传递给setBeanName()方法
+如果Bean实现了BeanFactoryAware接口的话，Spring将调用setBeanFactory()方法，将BeanFactory容器实例传入
+如果Bean实现了ApplicationContextAware接口的话，Spring将调用Bean的setApplicationContext()方法，将bean所在应用上下文引用传入进来。
+如果Bean实现了BeanPostProcessor接口，Spring就将调用他们的postProcessBeforeInitialization()方法。
+    @PostConstruct 注解，(构造函数之后，init()方法之前执行)
+如果Bean 实现了InitializingBean接口，Spring将调用他们的afterPropertiesSet()方法。
+类似的，如果bean使用init-method声明了初始化方法，该方法也会被调用。
+如果Bean 实现了BeanPostProcessor接口，Spring就将调用他们的postProcessAfterInitialization()方法。
+此时，Bean已经准备就绪，可以被应用程序使用了。他们将一直驻留在应用上下文中，直到应用上下文被销毁
+    @PreDestory 注解（destory方法之前执行）
+如果bean实现了DisposableBean接口，Spring将调用它的destory()接口方法，
+同样，如果bean使用了destory-method 声明销毁方法，该方法也会被调用。
 
 ==============================================================================================================================
 spring的循环依赖
@@ -46,4 +61,23 @@ https://www.zhihu.com/question/39814046/answer/550590260
 Spring是通过  递归  的方式获取目标bean及其所依赖的bean的；
 Spring实例化一个bean的时候，是分两步进行的，首先实例化目标bean，然后为其注入属性。
 
+===========================================================================================
+SpringMVC 中的DispatcherServlet流程
 
+1. 用户发请求-->DispatcherServlet，前端控制器收到请求后自己不进行处理，而是委托给其他的解析器进行处理，作为统一访问点，进行全局的流程控制。
+2.DispatcherServlet-->HandlerMapping，HandlerMapping将会把请求映射为HandlerExecutionChain对象（包含一个Handler处理器,多个HandlerInterceptor拦截器)。
+3.DispatcherServlet-->HandlerAdapter,HandlerAdapter将会把处理器包装为适配器，从而支持多种类型的处理器。
+4.HandlerAdapter-->处理器功能处理方法的调用，HandlerAdapter将会根据适配的结果调用真正的处理器的功能处理方法，
+完成功能处理，并返回一个ModelAndView对象(包含模型数据，逻辑视图名)
+5.ModelAndView的逻辑视图名-->ViewResolver，ViewResoler将把逻辑视图名解析为具体的View。
+6.View-->渲染，View会根据传进来的Model模型数据进行渲染，此处的Model实际是一个Map数据结构
+7.返回控制权给DispatcherServlet，由DispatcherServlet返回响应给用户。
+
+1.请求                    用户发请求-->DispatcherServlet
+2.寻找处理器              DispatcherServlet-->HandlerMapping-->DispatcherServlet
+3.适配处理器              DispatcherServlet-->HandlerAdapter
+4.调用处理器              HandlerAdapter-->Handler
+5.返回ModelAndView        HandlerAdapter-->DispatcherServlet
+6.解析view                DispatcherServlet-->ViewResolver-->DispatcherServlet
+7.根据Model渲染视图       DispatcherServlet-->View-->DispatcherServlet
+8.返回响应                DispatcherServlet-->用户
