@@ -1,6 +1,11 @@
 package com.example.StudyDemo.service;
 
+
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 〈一句话功能简述〉<br>
@@ -12,10 +17,18 @@ import java.util.*;
  */
 public class TestService02 {
 
+
+
+
     public static void main(String[] args) {
 //        test01();
 
-        test02();
+//        test02();
+
+
+
+
+
 
     }
 
