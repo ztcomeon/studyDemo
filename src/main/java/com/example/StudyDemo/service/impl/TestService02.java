@@ -1,11 +1,7 @@
-package com.example.StudyDemo.service;
+package com.example.StudyDemo.service.impl;
 
 
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.RejectedExecutionHandler;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 〈一句话功能简述〉<br>
