@@ -80,7 +80,12 @@
             </exclusions> -->
 		</dependency>
 
-
+		<!--guava依赖-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>LATEST</version>
+		</dependency>
 
 	</dependencies>
 
