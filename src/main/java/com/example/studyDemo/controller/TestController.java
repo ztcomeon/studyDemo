@@ -8,10 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import org.apache.commons.lang3.Validate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,8 +28,15 @@ import java.util.Map;
 public class TestController {
 
     @RequestMapping(value = "/hello1", method = RequestMethod.GET)
-    public String test1(String string) {
-        System.out.println("ddd");
+    public String test1(String string, String stringb) {
+        System.out.println(string + "===" + stringb);
+        return string + "===" + stringb;
+    }
+
+    @RequestMapping(value = "/testForPost", method = RequestMethod.POST)
+    public @ResponseBody
+    String testForPost() {
+        System.out.println("POST");
         return "ok";
     }
 
@@ -92,7 +96,6 @@ public class TestController {
 
     @Autowired
     TestRepository testRepository;
-
 
     @RequestMapping(value = "/testMethod", method = RequestMethod.POST)
     public String testMethod() {
