@@ -36,7 +36,16 @@ public class TestServiceImpl implements TestService, ApplicationContextAware {
     @Transactional
     @Override
     public TestEntity create(TestEntity testEntity) {
-
+//       事务自身调用，通过代理对象来完成
+//        TestServiceImpl testService = (TestServiceImpl)applicationContext.getBean("TestService");
+//        testService.modify(testEntity);
         return testRepository.save(testEntity);
     }
+
+//    @Transactional
+//    public TestEntity modify(TestEntity testEntity) {
+//        TestEntity entity = testRepository.save(testEntity);
+//        return entity;
+//    }
+
 }
