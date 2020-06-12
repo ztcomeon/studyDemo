@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   # jpa
   jpa:
@@ -18,3 +18,8 @@ spring:
     username: root
     password: 123456
     driverClassName: com.mysql.cj.jdbc.Driver
+
+#    servlet:
+#      multipart:
+#        max-file-size: 500MB
+#        max-request-size: 500MB

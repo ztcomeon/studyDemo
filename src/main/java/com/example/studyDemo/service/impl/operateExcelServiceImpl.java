@@ -2,6 +2,8 @@ package com.example.studyDemo.service.impl;
 
 import com.example.studyDemo.common.utils.XLSXUtils;
 import com.example.studyDemo.entity.TestEntity;
+import com.example.studyDemo.entity.TestEntity02;
+import com.example.studyDemo.repository.Test02Repository;
 import com.example.studyDemo.repository.TestRepository;
 import com.example.studyDemo.service.operateExcelService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -39,6 +41,9 @@ public class operateExcelServiceImpl implements operateExcelService {
 
     @Autowired
     TestRepository testRepository;
+
+    @Autowired
+    Test02Repository test02Repository;
 
     @Autowired
     ThreadPoolTaskExecutor threadPoolTaskExecutor;
@@ -148,30 +153,37 @@ public class operateExcelServiceImpl implements operateExcelService {
         //多线程导入
         int len = sheet.getLastRowNum();//读出总行数
         if (len > 0) {
-            int threadNum = Runtime.getRuntime().availableProcessors() * 2; // 设置可用线程数
+            // int threadNum = Runtime.getRuntime().availableProcessors() * 2; // 设置可用线程数
+            int threadNum = threadPoolTaskExecutor.getMaxPoolSize();
             int dataSize = len; // 待处理总数
             int threadSize = (dataSize / threadNum) == 0 ? 1 : dataSize / threadNum; // 线程分段处理数(保证线程执行的数量最低为1，避免除数为0)
             boolean special = dataSize % threadSize == 0; // 判断余数是否为0，即是否整除
-            List<TestEntity> cutList = null;
+            // List<TestEntity> cutList = null;
+            List<TestEntity02> cutList = null;
             for (int i = 0; i < threadNum; i++) {
                 if (special) {//整除时
                     if ((i + 1) * threadSize > dataSize) {
                         break;
                     } else {
-                        cutList = getDataList(sheet, threadSize, threadSize * (i + 1));
+                        // cutList = getDataList(sheet, threadSize, threadSize * (i + 1));
+                        cutList = getDataList02(sheet, threadSize, threadSize * (i + 1));
                     }
 
                 } else {//非整除时
                     if ((i + 1) == threadNum) {
-                        cutList = getDataList(sheet, threadSize * i, dataSize);
+                        // cutList = getDataList(sheet, threadSize * i, dataSize);
+                        cutList = getDataList02(sheet, threadSize * i, dataSize);
                     } else {
-                        cutList = getDataList(sheet, threadSize * i, threadSize * (i + 1));
+                        // cutList = getDataList(sheet, threadSize * i, threadSize * (i + 1));
+                        cutList = getDataList02(sheet, threadSize * i, threadSize * (i + 1));
                     }
                 }
-                List<TestEntity> finalCutList = cutList;
+                // List<TestEntity> finalCutList = cutList;
+                List<TestEntity02> finalCutList = cutList;
                 threadPoolTaskExecutor.execute(() -> {
                     System.out.println(Thread.currentThread().getName());
-                    testRepository.saveAll(finalCutList);
+                    // testRepository.saveAll(finalCutList);
+                    test02Repository.saveAll(finalCutList);
                 });
             }
         }
@@ -186,9 +198,28 @@ public class operateExcelServiceImpl implements operateExcelService {
             List<TestEntity> result = testRepository.findByName(a);
             if (result == null || result.size() == 0) {
                 TestEntity testEntity = new TestEntity();
-                testEntity.setName(a);
-                cutList.add(testEntity);
+            testEntity.setName(a);
+            cutList.add(testEntity);
             }
+
+
+        }
+        return cutList;
+    }
+
+
+    private List<TestEntity02> getDataList02(XSSFSheet sheet, int start, int end) {
+        List<TestEntity02> cutList = new ArrayList<>();
+        for (int j = start; j < end; j++) {
+            // String a = XLSXUtils.getCellValue(sheet.getRow(j), 0);
+            String b = XLSXUtils.getCellValue(sheet.getRow(j), 1);
+            String c = XLSXUtils.getCellValue(sheet.getRow(j), 2);
+
+            TestEntity02 testEntity02=new TestEntity02();
+            testEntity02.setName(b);
+            testEntity02.setAddress(c);
+            cutList.add(testEntity02);
+
         }
         return cutList;
     }

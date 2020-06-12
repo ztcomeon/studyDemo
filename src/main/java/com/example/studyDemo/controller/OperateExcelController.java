@@ -10,11 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * 〈一句话功能简述〉<br>
@@ -36,7 +32,7 @@ public class OperateExcelController {
      *
      * @param response
      */
-    @RequestMapping(value = "/export")
+    @RequestMapping(value = "/exportExcel")
     public void export(HttpServletResponse response) throws Exception {
         operateExcelService.exportExcel(response);
     }
