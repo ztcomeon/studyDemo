@@ -1,0 +1,6 @@
+#自定义的ApplicationContextInitializer 和自定义的 ApplicationListener 需要在这里（spring.factories）中进行配置
+#https://www.jianshu.com/p/5ac61de70ce6  可以看一下这个spring.factories
+org.springframework.context.ApplicationContextInitializer=\
+com.example.studyDemo.configuration.beanLife.MyApplicationContextInitializer
+org.springframework.context.ApplicationListener=\
+com.example.studyDemo.configuration.beanLife.MyApplicationListener

@@ -1,5 +1,6 @@
 package com.example.studyDemo;
 
+import com.example.studyDemo.configuration.beanLife.Book;
 import com.example.studyDemo.service.TestForAOPService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,8 +21,8 @@ public class StudyDemoApplication {
 //        TestEntity bean = context.getBean(TestEntity.class);
 //        System.out.println(bean.getName());
 
-//		Book book = (Book)run.getBean("book");
-//		System.out.println("Book name = " + book.getBookName());
+		Book book = (Book)run.getBean("book");
+		System.out.println("Book name = " + book.getBookName());
 //
 //        RelyA relyA =(RelyA) run.getBean("relyA");
 //        System.out.println(relyA);

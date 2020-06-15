@@ -1,4 +1,4 @@
-package com.example.studyDemo.configuration.aop;
+package com.example.studyDemo.configuration.spring;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;

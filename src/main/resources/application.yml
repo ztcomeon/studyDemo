@@ -23,3 +23,9 @@ spring:
 #      multipart:
 #        max-file-size: 500MB
 #        max-request-size: 500MB
+
+
+#图片上传保存地址
+img:
+  win_location: e:/images/
+  linux_location: /data/appfile/zhxq/images/

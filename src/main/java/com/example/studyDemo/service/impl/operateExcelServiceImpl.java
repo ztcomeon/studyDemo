@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -212,6 +213,7 @@ public class operateExcelServiceImpl implements operateExcelService {
         List<TestEntity02> cutList = new ArrayList<>();
         for (int j = start; j < end; j++) {
             // String a = XLSXUtils.getCellValue(sheet.getRow(j), 0);
+
             String b = XLSXUtils.getCellValue(sheet.getRow(j), 1);
             String c = XLSXUtils.getCellValue(sheet.getRow(j), 2);
 
@@ -219,7 +221,6 @@ public class operateExcelServiceImpl implements operateExcelService {
             testEntity02.setName(b);
             testEntity02.setAddress(c);
             cutList.add(testEntity02);
-
         }
         return cutList;
     }
