@@ -1,0 +1,80 @@
+
+================
+线程池详解
+https://mp.weixin.qq.com/s?__biz=MzI5NjY4MDA1NQ==&mid=2247483842&idx=1&sn
+=f12939ed3af019509444734381c1e957&chksm=ec41eedadb3667cc466d3182ca9e164d20
+ebf23ba946e4131821db6967391268352316c4ebad&scene=21#wechat_redirect
+
+几种创建方式：
+
+核心线程数5
+最大线程数10，
+存活时间60，存活时间单位：分钟
+工作队列为：LinkedBlockingQueue
+线程工厂为：defaultThreadFactory
+饱和策略（拒绝策略）：AbortPolicy（抛出异常）
+---
+new ThreadPoolExecutor(5,10,60,TimeUnit.MINUTES,new LinkedBlockingQueue<Runnable>(),
+    Executors.defaultThreadFactory(),new ThreadPoolExecutor.AbortPolicy())
+
+---
+创建只有一个线程的线程池，没有超时时间，使用Executors工具类，工作队列使用无界的LinkedBlockingQueue
+Executors.newSingleThreadExecutor();
+
+--
+创建有固定线程的线程池，没有超时时间，工作队列使用无界的LinkedBlockingQueue
+Executors.newFixedThreadPool(5);
+
+--
+大小不限的线程池，核心线程为0，最大线程为Integer.MAX_VALUE,存活时间为60s，该线程池可以无限扩展
+当需求降低的时候自动收缩，工作队列使用同步移交synchronousQueue
+Executors.newCachedThreadPool();
+
+--
+给定延迟之后执行，或者定期执行任务的线程池
+Executors.newScheduledThreadPool(5);
+
+--
+流程：
+提交任务，小于核心线程数时，创建核心线程（即使有空闲线程），数量达到核心线程数后，提交到工作队列中，线程
+忙完后会从队列中取出任务，到达核心线程数量之后，且工作队列也满了之后，会创建非核心线程，直到达到最大线程数，
+再提交任务会触发饱和策略（拒绝策略），如果某个线程的空闲时间达到了keepAliveTime，则被标记为可回收，并且
+当前线程数超过了核心线程数时，这个线程会被终止
+
+工作队列：
+1.ArrayBlockingQueue：列表形式的工作队列，必须要有初始队列大小，有界队列，先进先出。
+2.LinkedBlockingQueue：链表形式的工作队列，可以选择设置初始队列大小，有界/无界队列，先进先出。
+3.SynchronousQueue：SynchronousQueue（同步队列）不是一个真正的队列，而是一种在线程之间移交的机制。
+                     不保留任务，直接转交给线程处理，若线程都在工作，则新建线程，为了保证线程不会
+                     出现线程数量达到最大线程数，一般最大线程数指定为Integer.MAX_VALUE，即无限大
+                     或者，执行拒绝策略
+4.PriorityBlockingQueue：优先级队列，有界队列，根据优先级来安排任务，任务的优先级是通过自然顺序或Comparator
+5.DelayedWorkQueue：延迟的工作队列，无界队列。
+
+--
+饱和策略：（拒绝策略）
+1.AbortPolicy：中止策略。默认的饱和策略，抛出未检查的RejectedExecutionException。可捕获，然后处理
+2.DiscardPolicy：抛弃策略。当新提交的任务无法保存到队列中等待执行时，该策略会悄悄抛弃该任务。
+3.DiscardOldestPolicy：抛弃最旧的策略。抛弃下一个将被执行的任务，然后尝试重新提交新的任务。
+4.CallerRunsPolicy：调用者运行策略。将某些任务回退到调用者
+
+--
+线程工厂：
+1.DefaultThreadFactory：默认线程工厂，创建一个新的、非守护的线程，并且不包含特殊的配置信息。
+2.PrivilegedThreadFactory：通过这种方式创建出来的线程，将与创建privilegedThreadFactory的线程拥有相同的访问权限、
+                      AccessControlContext、ContextClassLoader(与主线程)。如果不使用privilegedThreadFactory，
+                      线程池创建的线程将从在需要新线程时调用execute或submit的客户程序中继承访问权限。
+3.自定义线程工厂：可以自己实现ThreadFactory接口来定制自己的线程工厂方法。
+
+--
+线程池的运行状态：runState，（有效的线程数就是workerCount）
+1.RUNNING：（运行）接受新任务并处理排队任务
+2.SHUTDOWN：（关闭）不接受新任务，但处理排队任务
+3.STOP：（停止）不接受新任务，不处理排队任务，并中断正在进行的任务
+4.TIDYING：（整理）所有任务已经终止，workerCount为零，线程转换到状态TIDYING将运行terminate()钩子方法；
+5.TERMINATED：（终止）terminated()已经完成，该方法执行完毕代表线程池已经完全终止。
+
+
+
+
+
