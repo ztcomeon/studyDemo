@@ -54,6 +54,23 @@ interrupted（）判断是否已经中断，并且清除中断标识位（判断
     饥饿：线程无法获得某种所需要的资源，导致一直是无法执行状态
 
 
+======
+spring相关：
+5.spring的模块
+    1.spring的核心模块：core，bean,el,context
+    2.数据访问和集成：JDBC.ORM.OXM,JMS,Transactions
+    3.web模块：web，servlet，socket，portlet
+    4.AOP，Test等模块
 
+13.spring中有多少中容器：
+    1.BeanFactory：基础类型的Ioc容器，提供完整的Ioc服务支持
+    2.ApplicationContext：BeanFactory的子接口，在 BeanFactory 的基础上构建，是相对比较高级的Ioc容器，
+        包含 BeanFactory 的所有功能，还提供了其他高级特性，事件发布，国际化信息支持， 同一资源加载策略等
+
+21.什么是spring的内部bean
+    将bean作为另一个bean的属性时，才能将bean声明为内部bean
+
+30.@Qualifier
+    有多个相同类型的bean时，指定装配哪一个
 
 
