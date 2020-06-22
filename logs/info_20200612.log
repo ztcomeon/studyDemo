@@ -1,0 +1,202 @@
+2020-06-12 11:31:56 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Starting StudyDemoApplication on PC201606170921 with PID 91308 (D:\zhang\IDEA\demo\StudyDemo\target\classes started by Administrator in D:\zhang\IDEA\demo\StudyDemo)
+2020-06-12 11:31:56 [main] INFO  c.e.studyDemo.StudyDemoApplication  - No active profile set, falling back to default profiles: default
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test02Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test03Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.TestRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 211ms. Found 0 JDBC repository interfaces.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-12 11:32:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 141ms. Found 3 JPA repository interfaces.
+2020-06-12 11:32:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat initialized with port(s): 8081 (http)
+2020-06-12 11:32:04 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:32:04 [main] INFO  o.a.catalina.core.StandardService  - Starting service [Tomcat]
+2020-06-12 11:32:04 [main] INFO  o.a.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-12 11:32:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+2020-06-12 11:32:05 [main] INFO  o.s.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 9075 ms
+2020-06-12 11:32:05 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure  - Init DruidDataSource
+2020-06-12 11:32:06 [main] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-06-12 11:32:06 [main] INFO  o.h.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 11:32:07 [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {5.3.15.Final}
+2020-06-12 11:32:07 [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2020-06-12 11:32:07 [main] INFO  o.h.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-06-12 11:32:08 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-12 11:32:14 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:32:14 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.win_location
+2020-06-12 11:32:14 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.linux_location
+2020-06-12 11:32:15 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Initializing ExecutorService 'taskExecutor'
+2020-06-12 11:32:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-12 11:32:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:32:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-12 11:32:16 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Started StudyDemoApplication in 21.971 seconds (JVM running for 24.381)
+2020-06-12 11:32:51 [Thread-30] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Shutting down ExecutorService 'taskExecutor'
+2020-06-12 11:32:51 [Thread-30] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:32:51 [Thread-30] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+2020-06-12 11:35:25 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Starting StudyDemoApplication on PC201606170921 with PID 91724 (D:\zhang\IDEA\demo\StudyDemo\target\classes started by Administrator in D:\zhang\IDEA\demo\StudyDemo)
+2020-06-12 11:35:25 [main] INFO  c.e.studyDemo.StudyDemoApplication  - No active profile set, falling back to default profiles: default
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test02Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test03Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.TestRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 66ms. Found 0 JDBC repository interfaces.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-12 11:35:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 77ms. Found 3 JPA repository interfaces.
+2020-06-12 11:35:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat initialized with port(s): 8081 (http)
+2020-06-12 11:35:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:35:28 [main] INFO  o.a.catalina.core.StandardService  - Starting service [Tomcat]
+2020-06-12 11:35:28 [main] INFO  o.a.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-12 11:35:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+2020-06-12 11:35:28 [main] INFO  o.s.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 2651 ms
+2020-06-12 11:35:28 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure  - Init DruidDataSource
+2020-06-12 11:35:29 [main] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-06-12 11:35:29 [main] INFO  o.h.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 11:35:29 [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {5.3.15.Final}
+2020-06-12 11:35:29 [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2020-06-12 11:35:29 [main] INFO  o.h.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-06-12 11:35:29 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-12 11:35:32 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:35:32 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.win_location
+2020-06-12 11:35:32 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.linux_location
+2020-06-12 11:35:32 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Initializing ExecutorService 'taskExecutor'
+2020-06-12 11:35:32 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-12 11:35:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:35:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-12 11:35:33 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Started StudyDemoApplication in 8.346 seconds (JVM running for 10.476)
+2020-06-12 11:36:02 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-12 11:36:02 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet  - Initializing Servlet 'dispatcherServlet'
+2020-06-12 11:36:02 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet  - Completed initialization in 7 ms
+2020-06-12 11:36:03 [http-nio-8081-exec-2] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:36:55 [http-nio-8081-exec-3] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:37:22 [http-nio-8081-exec-4] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:37:34 [http-nio-8081-exec-5] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:37:46 [http-nio-8081-exec-6] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:38:30 [http-nio-8081-exec-7] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:38:45 [http-nio-8081-exec-8] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:39:19 [http-nio-8081-exec-9] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:39:49 [http-nio-8081-exec-10] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:40:10 [http-nio-8081-exec-1] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:41:40 [Thread-21] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Shutting down ExecutorService 'taskExecutor'
+2020-06-12 11:41:40 [Thread-21] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:41:40 [Thread-21] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+2020-06-12 11:44:38 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Starting StudyDemoApplication on PC201606170921 with PID 89020 (D:\zhang\IDEA\demo\StudyDemo\target\classes started by Administrator in D:\zhang\IDEA\demo\StudyDemo)
+2020-06-12 11:44:38 [main] INFO  c.e.studyDemo.StudyDemoApplication  - No active profile set, falling back to default profiles: default
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test02Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test03Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.TestRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 183ms. Found 0 JDBC repository interfaces.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-12 11:44:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 91ms. Found 3 JPA repository interfaces.
+2020-06-12 11:44:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat initialized with port(s): 8081 (http)
+2020-06-12 11:44:40 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:44:40 [main] INFO  o.a.catalina.core.StandardService  - Starting service [Tomcat]
+2020-06-12 11:44:40 [main] INFO  o.a.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-12 11:44:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+2020-06-12 11:44:40 [main] INFO  o.s.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 2685 ms
+2020-06-12 11:44:41 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure  - Init DruidDataSource
+2020-06-12 11:44:41 [main] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-06-12 11:44:41 [main] INFO  o.h.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 11:44:41 [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {5.3.15.Final}
+2020-06-12 11:44:41 [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2020-06-12 11:44:41 [main] INFO  o.h.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-06-12 11:44:42 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-12 11:44:43 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:44:43 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.win_location
+2020-06-12 11:44:43 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor  - Autowired annotation is not supported on static fields: private static java.lang.String com.example.studyDemo.common.utils.UploadUtils.linux_location
+2020-06-12 11:44:44 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Initializing ExecutorService 'taskExecutor'
+2020-06-12 11:44:44 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-12 11:44:44 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:44:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-12 11:44:45 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Started StudyDemoApplication in 7.833 seconds (JVM running for 10.349)
+2020-06-12 11:45:07 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-12 11:45:07 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet  - Initializing Servlet 'dispatcherServlet'
+2020-06-12 11:45:07 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet  - Completed initialization in 12 ms
+2020-06-12 11:45:07 [http-nio-8081-exec-2] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:45:41 [Thread-19] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Shutting down ExecutorService 'taskExecutor'
+2020-06-12 11:45:41 [Thread-19] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:45:41 [Thread-19] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+2020-06-12 11:45:49 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Starting StudyDemoApplication on PC201606170921 with PID 93448 (D:\zhang\IDEA\demo\StudyDemo\target\classes started by Administrator in D:\zhang\IDEA\demo\StudyDemo)
+2020-06-12 11:45:49 [main] INFO  c.e.studyDemo.StudyDemoApplication  - No active profile set, falling back to default profiles: default
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test02Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test03Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.TestRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 61ms. Found 0 JDBC repository interfaces.
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 11:45:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-12 11:45:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 58ms. Found 3 JPA repository interfaces.
+2020-06-12 11:45:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat initialized with port(s): 8081 (http)
+2020-06-12 11:45:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:45:52 [main] INFO  o.a.catalina.core.StandardService  - Starting service [Tomcat]
+2020-06-12 11:45:52 [main] INFO  o.a.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-12 11:45:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+2020-06-12 11:45:52 [main] INFO  o.s.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 2921 ms
+2020-06-12 11:45:52 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure  - Init DruidDataSource
+2020-06-12 11:45:52 [main] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-06-12 11:45:52 [main] INFO  o.h.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 11:45:52 [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {5.3.15.Final}
+2020-06-12 11:45:52 [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2020-06-12 11:45:53 [main] INFO  o.h.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-06-12 11:45:53 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-12 11:45:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:45:56 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Initializing ExecutorService 'taskExecutor'
+2020-06-12 11:45:56 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-12 11:45:57 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8081"]
+2020-06-12 11:45:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-12 11:45:57 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Started StudyDemoApplication in 9.144 seconds (JVM running for 10.9)
+2020-06-12 11:46:00 [http-nio-8081-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-12 11:46:00 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet  - Initializing Servlet 'dispatcherServlet'
+2020-06-12 11:46:00 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet  - Completed initialization in 14 ms
+2020-06-12 11:46:01 [http-nio-8081-exec-7] INFO  c.e.s.c.OperateExcelController  - 上传图片:name=u=3139953554,3011511497&fm=26&gp=0.jpg,type=image/jpeg
+2020-06-12 11:49:09 [Thread-20] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Shutting down ExecutorService 'taskExecutor'
+2020-06-12 11:49:09 [Thread-20] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 11:49:09 [Thread-20] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
+2020-06-12 16:16:21 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Starting StudyDemoApplication on PC201606170921 with PID 93376 (D:\zhang\IDEA\demo\StudyDemo\target\classes started by Administrator in D:\zhang\IDEA\demo\StudyDemo)
+2020-06-12 16:16:21 [main] INFO  c.e.studyDemo.StudyDemoApplication  - No active profile set, falling back to default profiles: default
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test02Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.Test03Repository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport  - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.studyDemo.repository.TestRepository. If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 43ms. Found 0 JDBC repository interfaces.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-06-12 16:16:22 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate  - Finished Spring Data repository scanning in 44ms. Found 3 JPA repository interfaces.
+2020-06-12 16:16:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat initialized with port(s): 8081 (http)
+2020-06-12 16:16:22 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Initializing ProtocolHandler ["http-nio-8081"]
+2020-06-12 16:16:22 [main] INFO  o.a.catalina.core.StandardService  - Starting service [Tomcat]
+2020-06-12 16:16:22 [main] INFO  o.a.catalina.core.StandardEngine  - Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-06-12 16:16:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]  - Initializing Spring embedded WebApplicationContext
+2020-06-12 16:16:22 [main] INFO  o.s.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 1467 ms
+2020-06-12 16:16:23 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure  - Init DruidDataSource
+2020-06-12 16:16:23 [main] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} inited
+2020-06-12 16:16:23 [main] INFO  o.h.jpa.internal.util.LogHelper  - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-06-12 16:16:23 [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {5.3.15.Final}
+2020-06-12 16:16:23 [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2020-06-12 16:16:23 [main] INFO  o.h.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-06-12 16:16:23 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2020-06-12 16:16:24 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 16:16:25 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Initializing ExecutorService 'taskExecutor'
+2020-06-12 16:16:25 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration  - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-06-12 16:16:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol  - Starting ProtocolHandler ["http-nio-8081"]
+2020-06-12 16:16:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer  - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-12 16:16:25 [main] INFO  c.e.studyDemo.StudyDemoApplication  - Started StudyDemoApplication in 4.745 seconds (JVM running for 5.638)
+2020-06-12 16:16:27 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskExecutor  - Shutting down ExecutorService 'taskExecutor'
+2020-06-12 16:16:27 [Thread-12] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean  - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-06-12 16:16:27 [Thread-12] INFO  c.alibaba.druid.pool.DruidDataSource  - {dataSource-1} closed
