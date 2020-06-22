@@ -87,3 +87,22 @@ SpringMVC 中的DispatcherServlet流程
 实现CommandLineRunner或者实现AplicationRunner来实现启动时运行代码
 
 idea要实现热部署的话，需要添加jar包，然后还需要配置idea，具体可以网上搜
+
+===================================================================
+spring的事务：
+Spring事务失效的 8 大原因，这次可以吊打面试官了！
+https://mp.weixin.qq.com/s/Wi_Y7YjexZFVpALJF3nTUA
+1.数据库引擎不支持事务，MyISAM 引擎是不支持事务操作的，InnoDB 才是支持事务的引擎
+2.没有被 Spring 管理 （没有注解@Service，成为Spring组件）
+3.方法不是 public 的 （@Transactional只能作用在public方法上）
+4.自身调用问题    （一个事务方法调用同一个类中的另一个方法或另一个事务方法，都不生效，必需要经过Spring代理，事务才能生效）
+5.数据源没有配置事务管理器  有配置PlatformTransactionManager 或者启动类 @EnableTransactionManagement
+6.不支持事务(被禁用)     @Transactional(propagation = Propagation.NOT_SUPPORTED)表示不以事务运行，当前若存在事务则挂起
+7.异常被吃了 把异常吃了，然后又不抛出来   （事务场景中，抛出异常被catch后，如果需要回滚，一定要手动回滚事务）
+8.异常类型错误  throw new Exception("更新错误")  因为默认回滚的是：RuntimeException，如果你想触发其他异常的回滚，
+                需要在注解上配置一下，@Transactional(rollbackFor = Exception.class)
+
+SpringBoot声明式事务的简单运用
+https://blog.csdn.net/justry_deng/article/details/80828180
+
+================================================================
