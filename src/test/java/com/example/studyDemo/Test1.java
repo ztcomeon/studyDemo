@@ -3,9 +3,7 @@ package com.example.studyDemo;
 import com.example.studyDemo.entity.TestEntity;
 import com.example.studyDemo.entity.TestEntity02;
 import com.example.studyDemo.entity.User;
-import com.google.common.collect.Lists;
 import org.apache.commons.lang3.RandomUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -109,7 +107,7 @@ public class Test1 {
     BigDecimal bigDecimal = BigDecimal.valueOf(12.033);
     //    默认的权限能够方位当前类和同包下，子类不能访问
     //    protected（受保护的）可以访问当前类，同包和子类
-    String[] ss = new String[3];
+    String[] ss = new String[4];
     ss[1] = "aaa";
     ss[2] = "bbb";
     ss[3] = "ccc";

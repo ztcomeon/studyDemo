@@ -1,0 +1,70 @@
+
+=============================================================================
+敖丙的Spring Cloud简介（基础概念的讲解）
+https://mp.weixin.qq.com/s?__biz=MzAwNDA2OTM1Ng==&mid=2453141625&idx=1
+&sn=0e0618b184f7530f3eee15a62466ebe9&scene=21#wechat_redirect
+20000 字的 Spring Cloud 总结，从此任何问题也难不住你
+
+目录：
+什么是 Spring cloud
+Spring Cloud 的版本
+Spring Cloud 的服务发现框架——Eureka
+负载均衡之 Ribbon
+什么是 Open Feign
+必不可少的 Hystrix
+微服务网关——Zuul
+Spring Cloud配置管理——Config
+引出 Spring Cloud Bus
+
+1.什么是 Spring cloud
+    Spring Cloud就是微服务系统架构的一站式解决方案，Spring Cloud 为我们提供了一套简易的编程模型，使我们能在 Spring
+    Boot 的基础上轻松地实现微服务项目的构建
+
+2.Spring Cloud 的版本
+    英国伦敦地铁站的站名，：最早 的 Release 版本 Angel，第二个 Release 版本 Brixton（英国地名），然后是 Camden、
+    Dalston、Edgware、Finchley、Greenwich、Hoxton。
+
+3.Spring Cloud 的服务发现框架——Eureka
+        总的来说，Eureka 就是一个服务发现框架。
+    服务发现：其实就是一个“中介”，整个过程中有三个角色：服务提供者(出租房子的)、服务消费者(租客)、服务中介(房屋中介)。
+    服务提供者：就是提供一些自己能够执行的一些服务给外界。
+    服务消费者：就是需要使用一些服务的“用户”。
+    服务中介：其实就是服务提供者和服务消费者之间的“桥梁”，服务提供者可以把自己注册到服务中介那里，而服务消费者如需要
+            消费一些服务(使用一些功能)就可以在服务中介中寻找注册在服务中介的服务提供者。
+    服务注册 Register：官方解释：当 Eureka 客户端向[Eureka] Server注册时，它提供自身的元数据，比如IP地址、端口，
+                      运行状况指示符URL，主页等    （服务提供方注册到Eureka上）
+                      结合中介理解：房东 (提供者[Eureka] Client Provider)在中介 (服务器[Eureka] Server) 那里
+                      登记房屋的信息，比如面积，价格，地段等等(元数据metaData)。
+    服务续约 Renew：官方解释：Eureka 客户会每隔30秒(默认情况下)发送一次心跳来续约。通过续约来告知[Eureka] Server该
+                   Eureka 客户仍然存在，没有出现问题。正常情况下，如果[Eureka] Server在90秒（三个心跳周期）没有
+                   收到 Eureka 客户的续约，它会将实例从其注册表中删除。
+                   结合中介理解：房东 (提供者[Eureka] Client Provider) 定期告诉中介 (服务器[Eureka] Server)
+                   我的房子还租(续约) ，中介 (服务器[Eureka] Server) 收到之后继续保留房屋的信息。
+    获取注册列表信息 Fetch Registries：Eureka 客户端从服务器获取注册表信息，并将其缓存在本地。该注册列表信息定期
+                                     （每30秒钟）更新一次
+    服务下线 Cancel：Eureka客户端在程序关闭时向Eureka服务器发送取消请求。发送请求后，该客户端实例信息将从服务
+                    器的实例注册表中删除。
+    服务剔除 Eviction：在默认的情况下，当Eureka客户端连续90秒(3个续约周期)没有向Eureka服务器发送服务续约，
+                      即心跳，Eureka服务器会将该服务实例从服务注册列表删除，即服务剔除
+
+4.负载均衡之 Ribbon
+    4.1什么是 RestTemplate?
+        RestTemplate是Spring提供的一个访问Http服务的客户端类，使用下面的代码，可以完成http服务
+        restTemplate.postForObject(url, request, Boolean.class);
+    4.2为什么需要 Ribbon？
+        Ribbon 是一个客户端/进程内负载均衡器，运行在消费者端。（消费端的负载均衡器）
+        工作原理就是：Consumer端获取到了所有的服务列表之后，在其内部使用负载均衡算法，进行对多个系统的调用。
+    4.3Nginx 和 Ribbon 的对比
+        Nignx：集中式的负载均衡器。Nginx是接收了所有的请求进行负载均衡的（先请求，再负载均衡）
+        Ribbon：消费端的负载均衡。在客户端进行负载均衡才进行请求的（先负载均衡，再请求）
+    4.4Ribbon 的几种负载均衡算法
+        Nginx使用的是 轮询 和 加权轮询 算法，Ribbon中有更多的负载均衡调度算法
+        RoundRobinRule：轮询策略。Ribbon默认采用的策略。若经过一轮轮询没有找到可用的provider，
+                        其最多轮询 10 轮。若最终还没有找到，则返回 null。
+        RandomRule: 随机策略，从所有可用的 provider 中随机选择一个。
+        RetryRule: 重试策略。先按照 RoundRobinRule 策略获取 provider，若获取失败，则在指定的
+                   时限内重试。默认的时限为 500 毫秒。
+
+
+
+===================================================================================

@@ -1,0 +1,29 @@
+
+==============
+SpringBoot 系列文章：
+http://www.iocoder.cn/Spring-Boot/good-collection/
+
+打好基础：
+芋道 Spring Boot 快速入门
+http://www.iocoder.cn/Spring-Boot/quick-start/?self
+------------
+芋道 Spring Boot 自动配置原理
+http://www.iocoder.cn/Spring-Boot/autoconfigure/?self
+    涉及到几个注解，和SpringBoot能够自动进行配置的机制
+        @Configuration //标注为配置类   @ConditionalOnWebApplication //条件注解。xxx条件下生效
+    @EnableConfigurationProperties(ServerProperties.class) //让 ServerProperties 配置属性类生效
+    @ConfigurationProperties(prefix = "server", ignoreUnknownFields = true)  //声明配置属性类 将
+    指定前缀的配置项批量注入到该类中
+    自动化配置，每个包中对应一个组件，SpringBoot默认提供对他们的自动化配置（XXXAutoConfiguration类）
+        META-INF 目录下的 spring.factories 文件，@Configuration 注解的配置类，就升级成类自动配置类，
+    spring-boot-autoconfigure 项目提供的是它选择的主流框架的自动配置，所以其它框架需要自己实现（可以自定义
+    一个start，另一个项目引入这个start，并且这个自定义start可以完成自动配置）
+-----------
+芋道 Spring Boot Jar 启动原理（还没研究）
+
+--
+芋道 Spring Boot 热部署入门
+http://www.iocoder.cn/Spring-Boot/hot-swap/?self
+        spring-boot-devtools 是 Spring Boot 提供的工具，监控当前应用所在的 classpath 下的文件发生变化，进行自动重启。
+    注意是 较快的重启方式，并没有采用热部署。IDEA 热部署，需要进行一下
+--
