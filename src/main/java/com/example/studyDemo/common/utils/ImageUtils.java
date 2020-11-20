@@ -4,7 +4,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
-import sun.misc.BASE64Decoder;
+import org.apache.commons.codec.binary.Base64;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -95,11 +95,14 @@ public class ImageUtils {
     if ("".equals(img_base64)) {
       throw new IllegalArgumentException("图片编码不能为空");
     }
-    BASE64Decoder decoder = new BASE64Decoder();
+//    IDEA解决sun.misc.BASE64Encoder找不到jar包的解决方法
+//    https://blog.csdn.net/qingshuiwater/article/details/82468758
+//    BASE64Decoder decoder = new BASE64Decoder();
     String filePath = "";
     try {
-      byte[] b = decoder.decodeBuffer(img_base64);
-      for (int i = 0; i < b.length; ++i) {
+//      byte[] b = decoder.decodeBuffer(img_base64);
+        byte[] b =Base64.decodeBase64(img_base64);
+        for (int i = 0; i < b.length; ++i) {
         if (b[i] < 0) {// 调整异常数据
           b[i] += 256;
         }
